@@ -1,2 +1,8 @@
+[terminal]
+shell = "nu"
+
 [font]
 normal = { family = "JetBrainsMono Nerd Font Mono" }
+
+[general]
+import = ["./themes/themes/gruber_darker.toml"]
