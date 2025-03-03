@@ -1,6 +1,3 @@
-[terminal]
-shell = "nu"
-
 [font]
 normal = { family = "JetBrainsMono Nerd Font Mono" }
 
