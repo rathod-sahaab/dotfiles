@@ -2,7 +2,7 @@
 
 * {
   font-size: 15px;
-  font-family: "JetBrainsMono Nerd Font";
+  font-family: "SpaceMono Nerd Font";
 }
 window#waybar {
   all: unset;
@@ -40,7 +40,8 @@ tooltip {
 #battery:hover,
 #cpu:hover,
 #memory:hover,
-#temperature:hover {
+#temperature:hover,
+#pulseaudio:hover {
   transition: all 0.3s ease;
   color: @color9;
 }
@@ -54,13 +55,13 @@ tooltip {
   color: @color7;
   transition: all 0.3s ease;
 }
-#custom-pacman {
+#pulseaudio {
   padding: 0px 5px;
-  transition: all 0.3s ease;
   color: @color7;
+  transition: all 0.3s ease;
 }
 #workspaces {
-  padding: 0px 3px;
+  padding: 0px 5px;
 }
 #workspaces button {
   all: unset;
