@@ -23,3 +23,6 @@ abbr --add gpullur "git pull upstream --rebase"
 abbr --add gpuo "git push -u origin"
 abbr --add gs "git status"
 abbr --add ls exa
+
+zoxide init fish | source
+direnv hook fish | source

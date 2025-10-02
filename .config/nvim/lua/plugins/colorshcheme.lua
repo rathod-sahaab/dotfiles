@@ -1,11 +1,10 @@
-return  {
-  { 'slugbyte/lackluster.nvim' },
+return {
+  { "slugbyte/lackluster.nvim" },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "lackluster-dark",
+      colorscheme = "tokyonight",
     },
-  }
+  },
 }
-
