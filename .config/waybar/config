@@ -2,7 +2,13 @@
   "layer": "top",
   "position": "top",
   "reload_style_on_change": true,
-  "modules-left": ["clock", "tray", "pulseaudio"],
+  "modules-left": [
+    "clock",
+    "tray",
+    "pulseaudio",
+    "custom/brightness",
+    "battery"
+  ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "group/expand",
@@ -38,6 +44,16 @@
     },
     "scroll-step": 1
   },
+  "custom/brightness": {
+    "format": " {}",
+    "exec": "brightnessctl -m | awk -F',' '{print $4}' | sed 's/%//'",
+    "interval": 5,
+    "on-click": "brightnessctl set +10%",
+    "on-click-right": "brightnessctl set 10%-",
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "tooltip": false
+  },
   "custom/notification": {
     "tooltip": false,
     "format": "\uf49a",
@@ -70,7 +86,7 @@
   },
   "bluetooth": {
     "format-on": "󰂯",
-    "format-off": "BT-off",
+    "format-off": "󰂲",
     "format-disabled": "󰂲",
     "format-connected-battery": "{device_battery_percentage}% 󰂯",
     "format-alt": "{device_alias} 󰂯",
@@ -87,9 +103,9 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-plugged": "{capacity}% 󰂄 ",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
   },

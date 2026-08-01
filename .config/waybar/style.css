@@ -32,6 +32,7 @@ tooltip {
 #clock:hover,
 #custom-pacman:hover,
 #custom-notification:hover,
+#custom-brightness:hover,
 #bluetooth:hover,
 #network:hover,
 #battery:hover,
@@ -43,6 +44,11 @@ tooltip {
   color: @color9;
 }
 #custom-notification {
+  padding: 0px 5px;
+  transition: all 0.3s ease;
+  color: @color7;
+}
+#custom-brightness {
   padding: 0px 5px;
   transition: all 0.3s ease;
   color: @color7;
