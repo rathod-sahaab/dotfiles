@@ -29,7 +29,7 @@
     }
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "",
     "format-icons": {
@@ -76,12 +76,14 @@
     }
   },
   "network": {
+    "interval": 1,
     "format-wifi": "",
     "format-ethernet": "",
-    "format-disconnected": "",
-    "tooltip-format-disconnected": "Error",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "format-linked": "󰈁",
+    "format-disconnected": "󰪎",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) \n {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "tooltip-format-ethernet": "{ifname} 🖧\n {bandwidthUpBytes}  {bandwidthDownBytes}",
     "on-click": "alacritty -e nmtui"
   },
   "bluetooth": {
@@ -109,15 +111,6 @@
     "format-alt": "{time} {icon}",
     "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
   },
-  "custom/pacman": {
-    "format": "󰅢 {}",
-    "interval": 30,
-    "exec": "checkupdates | wc -l",
-    "exec-if": "exit 0",
-    "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-    "signal": 8,
-    "tooltip": false
-  },
   "custom/expand": {
     "format": "",
     "tooltip": false
@@ -133,14 +126,20 @@
       "transition-to-left": true,
       "click-to-reveal": true
     },
-    "modules": ["custom/expand", "cpu", "memory", "custom/endpoint"]
+    "modules": ["custom/expand", "cpu", "memory", "custom/disk", "custom/endpoint"]
   },
   "cpu": {
-    "format": "󰻠",
+    "format": "",
     "tooltip": true
   },
   "memory": {
     "format": ""
+  },
+  "custom/disk": {
+    "format": "{}",
+    "interval": 30,
+    "exec": "~/.config/waybar/scripts/disk_info.sh",
+    "return-type": "json"
   },
   "temperature": {
     "critical-threshold": 80,

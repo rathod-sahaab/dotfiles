@@ -6,7 +6,7 @@ local mainMod = "SUPER"
 
 -- Core application & window binds
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("alacritty"))
-hl.bind(mainMod .. " + Q", hl.dsp.window.kill())
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("brave"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("nautilus"))

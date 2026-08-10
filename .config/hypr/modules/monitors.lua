@@ -27,10 +27,15 @@ hl.monitor({
 })
 
 -- Workspace monitor assignments
-hl.config({
-    workspace = {
-        "1, monitor:DP-9",
-        "2, monitor:DP-1",
-        "3, monitor:DP-8",
-    },
+hl.workspace_rule({
+    workspace="1",
+    monitor="DP-9"
+})
+hl.workspace_rule({
+    workspace="2",
+    monitor="DP-1"
+})
+hl.workspace_rule({
+    workspace="3",
+    monitor="DP-8"
 })

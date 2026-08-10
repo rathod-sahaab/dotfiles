@@ -8,6 +8,7 @@ require("modules.autostart")
 require("modules.decorations")
 require("modules.env")
 require("modules.keyboard")
+require("modules.windowrules")
 
 -------------------------------------------------------------------------------
 -- INPUT & PER-DEVICE CONFIGURATION
